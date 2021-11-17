@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+		<%- include('./partials/header.ejs'); %>
+		<title>:: Sports Scheduling and Result System :: Facilitator</title>
+	</head>
+	<body class="theme-black">
+		<!-- Page Loader -->
+		<div class="page-loader-wrapper">
+			<div class="loader">
+				<p>Please wait...</p>
+			</div>
+		</div>
+		<div class="overlay"></div>
+
+		<%- include('./partials/navbar.ejs'); %>
+
+		<!-- Main Content -->
+		<section class="content">
+			<div class="container">
+				<div class="block-header">
+					<div class="row clearfix">
+						<div class="col-lg-5 col-md-5 col-sm-12">
+							<h2>Facilitator</h2>
+						</div>
+						<div class="col-lg-7 col-md-7 col-sm-12">
+							<ul class="breadcrumb float-md-right padding-0">
+								<li class="breadcrumb-item">
+									<a href="/home"><i class="zmdi zmdi-home"></i></a>
+								</li>
+								<li class="breadcrumb-item active">Facilitator</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="row clearfix">
+					<div class="col-lg-12">
+						<div class="card">
+							<div class="header">
+								<button
+									type="button"
+									class="btn btn-primary btn-round waves-effect m-t-20"
+									data-toggle="modal"
+									data-target="#addevent"
+								>
+									Add Facilitator
+								</button>
+								<ul class="header-dropdown"></ul>
+							</div>
+
+							<div class="body">
+								<div class="row">
+									<div class="col-md-12">
+										<table
+											class="
+												table table-bordered table-striped table-hover
+												js-basic-example
+												dataTable
+											"
+										>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Address</th>
+													<th>Gender</th>
+													<th>Contact Number</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Name</th>
+													<th>Address</th>
+													<th>Gender</th>
+													<th>Contact Number</th>
+													<th>Action</th>
+												</tr>
+											</tfoot>
+											<tbody>
+												<tr>
+													<td>Tiger Nixon</td>
+													<td>America</td>
+													<td>Male</td>
+													<td>4120507</td>
+													<td>
+														<button
+															type="button"
+															data-color="cyan"
+															class="btn btn-round bg-cyan waves-effect"
+														>
+															Edit
+														</button>
+														<button
+															type="button"
+															data-color="pink"
+															class="btn btn-round bg-pink waves-effect"
+														>
+															Remove
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Tiger Max</td>
+													<td>Africa</td>
+													<td>Male</td>
+													<td>799-4523</td>
+													<td>
+														<button
+															type="button"
+															data-color="cyan"
+															class="btn btn-round bg-cyan waves-effect"
+														>
+															Edit
+														</button>
+														<button
+															type="button"
+															data-color="pink"
+															class="btn btn-round bg-pink waves-effect"
+														>
+															Remove
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="modal fade" id="addevent" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="title" id="defaultModalLabel">Facilitator</h4>
+					</div>
+
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="form-line">
+								<input type="text" class="form-control" placeholder="Name" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-line">
+								<input type="text" class="form-control" placeholder="Address" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="radio inlineblock m-r-20">
+								<input
+									type="radio"
+									name="gender"
+									id="male"
+									class="with-gap"
+									value="option1"
+								/>
+								<label for="male">Male</label>
+							</div>
+							<div class="radio inlineblock">
+								<input
+									type="radio"
+									name="gender"
+									id="Female"
+									class="with-gap"
+									value="option2"
+									checked=""
+								/>
+								<label for="Female">Female</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-line">
+								<input
+									type="number"
+									class="form-control"
+									placeholder="Number"
+								/>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button
+							type="button"
+							class="btn btn-primary btn-round waves-effect"
+						>
+							Save
+						</button>
+						<button
+							type="button"
+							class="btn btn-simple btn-round waves-effect"
+							data-dismiss="modal"
+						>
+							CLOSE
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<%- include('./partials/scripts.ejs'); %>
+	</body>
+</html>

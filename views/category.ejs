@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+		<%- include('./partials/header.ejs'); %>
+		<title>:: Sports Scheduling and Result System :: Category</title>
+	</head>
+	<body class="theme-black">
+		<!-- Page Loader -->
+		<div class="page-loader-wrapper">
+			<div class="loader">
+				<p>Please wait...</p>
+			</div>
+		</div>
+		<div class="overlay"></div>
+		<!-- Overlay For Sidebars -->
+
+		<%- include('./partials/navbar.ejs'); %>
+
+		<!-- Main Content -->
+		<section class="content">
+			<div class="container">
+				<div class="block-header">
+					<div class="row clearfix">
+						<div class="col-lg-5 col-md-5 col-sm-12">
+							<h2>Category</h2>
+						</div>
+						<div class="col-lg-7 col-md-7 col-sm-12">
+							<ul class="breadcrumb float-md-right padding-0">
+								<li class="breadcrumb-item">
+									<a href="/home"><i class="zmdi zmdi-home"></i></a>
+								</li>
+								<li class="breadcrumb-item active">Category</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="row clearfix">
+					<div class="col-lg-12">
+						<div class="card">
+							<div class="header">
+								<button
+									type="button"
+									class="btn btn-primary btn-round waves-effect m-t-20"
+									data-toggle="modal"
+									data-target="#addevent"
+								>
+									Add Category
+								</button>
+								<ul class="header-dropdown"></ul>
+							</div>
+
+							<div class="body">
+								<div class="row">
+									<div class="col-md-12">
+										<table
+											class="
+												table table-bordered table-striped table-hover
+												js-basic-example
+												dataTable
+											"
+										>
+											<thead>
+												<tr>
+													<th>Category</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Category</th>
+													<th>Action</th>
+												</tr>
+											</tfoot>
+											<tbody>
+												<tr>
+													<td>Single</td>
+													<td>
+														<button
+															type="button"
+															data-color="cyan"
+															class="btn btn-round bg-cyan waves-effect"
+														>
+															Edit
+														</button>
+														<button
+															type="button"
+															data-color="pink"
+															class="btn btn-round bg-pink waves-effect"
+														>
+															Remove
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Double</td>
+													<td>
+														<button
+															type="button"
+															data-color="cyan"
+															class="btn btn-round bg-cyan waves-effect"
+														>
+															Edit
+														</button>
+														<button
+															type="button"
+															data-color="pink"
+															class="btn btn-round bg-pink waves-effect"
+														>
+															Remove
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Team</td>
+													<td>
+														<button
+															type="button"
+															data-color="cyan"
+															class="btn btn-round bg-cyan waves-effect"
+														>
+															Edit
+														</button>
+														<button
+															type="button"
+															data-color="pink"
+															class="btn btn-round bg-pink waves-effect"
+														>
+															Remove
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="modal fade" id="addevent" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="title" id="defaultModalLabel">Category</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="form-line">
+								<input
+									type="text"
+									class="form-control"
+									placeholder="Category"
+								/>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button
+							type="button"
+							class="btn btn-primary btn-round waves-effect"
+						>
+							Save
+						</button>
+						<button
+							type="button"
+							class="btn btn-simple btn-round waves-effect"
+							data-dismiss="modal"
+						>
+							CLOSE
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<%- include('./partials/scripts.ejs'); %>
+	</body>
+</html>
