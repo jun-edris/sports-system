@@ -10,18 +10,15 @@ const {
 const router = express.Router();
 
 const app = express();
-const {
-	isAuthenticated,
-	isNotAuthenticated,
-} = require('./../middlewares/util');
+const { checkLoggedIn, checkLoggedOut } = require('./../middlewares/util');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-router.get('/', isNotAuthenticated, index);
-router.get('/register', isNotAuthenticated, register);
-router.get('/tournament', isAuthenticated, tournament);
-router.get('/users', isAuthenticated, users);
-router.get('/sport', isAuthenticated, sport);
-router.get('/dashboard', isAuthenticated, dashboard);
+router.get('/', checkLoggedOut, index);
+router.get('/register', checkLoggedOut, register);
+router.get('/tournament', checkLoggedIn, tournament);
+router.get('/users', checkLoggedIn, users);
+router.get('/sport', checkLoggedIn, sport);
+router.get('/dashboard', checkLoggedIn, dashboard);
 
 module.exports = router;

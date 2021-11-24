@@ -9,12 +9,9 @@ const userRoute = require('./routes/users');
 
 const app = express();
 
-app.set('view-engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(flash());
-app.use(passport.initialize());
-app.use(passport.session());
+
 app.use(
 	session({
 		secret: process.env.DATABASE_LISTEN,
@@ -25,7 +22,11 @@ app.use(
 		},
 	})
 );
+app.set('view-engine', 'ejs');
 app.use('/static', express.static(path.join(__dirname, './static')));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', viewRoute);
 app.use('/', userRoute);

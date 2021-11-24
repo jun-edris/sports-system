@@ -14,5 +14,5 @@ exports.sport = (req, res) => {
 	res.render('sport.ejs');
 };
 exports.dashboard = (req, res) => {
-	res.redirect('dashboard');
+	res.render('dashboard.ejs', { errors: req.flash('errors') });
 };
