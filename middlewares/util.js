@@ -89,18 +89,30 @@ exports.hashPassword = (password) => {
 };
 
 exports.verifyPassword = (passwordAttempt, hashedPassword) => {
-	return bcrypt.compare(passwordAttempt, hashedPassword);
+	return new Promise(async (resolve, reject) => {
+		try {
+			await bcrypt.compare(passwordAttempt, hashedPassword).then((match) => {
+				if (match) {
+					resolve(true);
+				} else {
+					resolve(`The password that you've entered is incorrect`);
+				}
+			});
+		} catch (error) {
+			reject(error);
+		}
+	});
 };
 
-exports.isAuthenticated = (req, res, next) => {
-	if (req.session.isAuthenticated) {
-		return next();
+exports.checkLoggedIn = (req, res, next) => {
+	if (!req.isAuthenticated) {
+		return res.redirect('/');
 	}
-	res.redirect('/');
+	next();
 };
-exports.isNotAuthenticated = (req, res, next) => {
-	if (req.session.isAuthenticated) {
-		return res.redirect('/dashboard.ejs');
+exports.checkLoggedOut = (req, res, next) => {
+	if (req.isAuthenticated) {
+		return res.redirect('/dashboard');
 	}
 	next();
 };
